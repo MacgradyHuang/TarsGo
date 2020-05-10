@@ -256,7 +256,7 @@ func (h *tcpHandler) recv(connSt *connInfo) {
 				currBuffer = nil
 				break
 			}
-			zaplog.Error("parse package error %s %v", zap.Any("RemoteAddr", conn.RemoteAddr()), zap.Error(err))
+			zaplog.Error("parse package error", zap.Any("RemoteAddr", conn.RemoteAddr()), zap.Error(err))
 			return
 		}
 	}
